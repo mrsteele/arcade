@@ -4,7 +4,9 @@
   "description": "A basic arcade cabinet",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,13 @@
   "bugs": {
     "url": "https://github.com/mrsteele/arcade/issues"
   },
-  "homepage": "https://github.com/mrsteele/arcade#readme"
+  "homepage": "https://github.com/mrsteele/arcade#readme",
+  "dependencies": {
+    "next": "^7.0.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  },
+  "devDependencies": {
+    "standard": "^12.0.1"
+  }
 }
