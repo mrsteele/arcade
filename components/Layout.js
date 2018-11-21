@@ -11,7 +11,7 @@ export default (props) => (
       <nav>
         <Container>
           <Link href="/">home</Link>
-          <Link href="/jsacman">jsacman</Link>
+          <Link href="/fruitcatch">fruitcatch</Link>
         </Container>
       </nav>
     </header>

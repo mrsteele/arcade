@@ -17,7 +17,8 @@ export default class extends React.Component {
       },
       fruit: {
         size: 15
-      }
+      },
+      textSize: 16
     }
 
     // initializations
@@ -38,7 +39,7 @@ export default class extends React.Component {
   }
 
   draw () {
-    const { fruit, height, bucket, padding } = this.config
+    const { fruit, height, bucket, padding, textSize } = this.config
     // draw the fruit
     this.fruits.forEach(f => {
       this.ctx.fillStyle = f.bad ? 'red' : 'white'
@@ -48,6 +49,10 @@ export default class extends React.Component {
     // draw the bucket
     this.ctx.fillStyle = 'white'
     this.ctx.fillRect(this.bucket, height - bucket.height - padding, bucket.width, bucket.height)
+
+    // draw score
+    this.ctx.font = `${textSize}px Arial`;
+    this.ctx.fillText(`score: ${this.score}`, padding, textSize)
   }
 
   tick () {
