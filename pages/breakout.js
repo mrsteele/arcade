@@ -17,12 +17,6 @@ export default class extends Game {
     }
   }
 
-  keysDown = {
-    left: false,
-    right: false,
-    space: false
-  }
-
   draw () {
     this.ctx.fillStyle = 'white'
 
@@ -31,7 +25,6 @@ export default class extends Game {
 
     // player
     this.ctx.fillRect(this.player.x, this.player.y, this.player.width, this.player.height)
-
 
     this.ctx.font = `15px Arial`
     this.ctx.fillText(`${this.ball.speed.x}`, 10, 10)
@@ -78,29 +71,10 @@ export default class extends Game {
     }
   }
 
-  keyUp = (e) => {
-    if (e.keyCode === 37) {
-      this.keysDown.left = false
-    } else if (e.keyCode === 39) {
-      this.keysDown.right = false
-    }
-  }
-
-  keyDown = (e) => {
-    if (e.keyCode === 37) {
-      this.keysDown.left = true
-    } else if (e.keyCode === 39) {
-      this.keysDown.right = true
-    }
-  }
-
   init () {
-    document.addEventListener('keydown', this.keyDown)
-    document.addEventListener('keyup', this.keyUp)
-  }
-
-  deinit () {
-    document.removeEventListener('keydown', this.keyDown)
-    document.removeEventListener('keyup', this.keyUp)
+    return {
+      37: 'left',
+      39: 'right'
+    }
   }
 }

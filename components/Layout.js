@@ -5,14 +5,14 @@ import Container from './Container'
 export default (props) => (
   <main>
     <Head>
-      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css" />
+      <link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css' />
     </Head>
     <header>
       <nav>
         <Container>
-          <Link href="/">home</Link>
-          <Link href="/fruitcatch">fruitcatch</Link>
-          <Link href="/breakout">breakout</Link>
+          <Link href='/'>home</Link>
+          <Link href='/fruitcatch'>fruitcatch</Link>
+          <Link href='/breakout'>breakout</Link>
         </Container>
       </nav>
     </header>

@@ -37,14 +37,36 @@ export default class extends React.Component {
     // remove things...
   }
 
+  keyUp = (e) => {
+    const keyName = this.keys[e.keyCode]
+    if (keyName) {
+      this.keysDown[keyName] = false
+    }
+  }
+
+  keyDown = (e) => {
+    const keyName = this.keys[e.keyCode]
+    if (keyName) {
+      this.keysDown[keyName] = true
+    }
+  }
+
   componentDidMount () {
     this.ctx = this.canvas.current.getContext('2d')
-    this.init()
+    this.keys = this.init() || {}
+    this.keysDown = {}
+    Object.values(this.keys).forEach(name => {
+      this.keysDown[name] = false
+    })
+    document.addEventListener('keydown', this.keyDown)
+    document.addEventListener('keyup', this.keyUp)
     this.frameid = window.requestAnimationFrame(this.run)
   }
 
   componentWillUnmount () {
     this.deinit()
+    document.removeEventListener('keydown', this.keyDown)
+    document.removeEventListener('keyup', this.keyUp)
     window.cancelAnimationFrame(this.frameid)
   }
 

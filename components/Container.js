@@ -1,4 +1,4 @@
-export default ({children, ...rest}) => (
+export default ({ children, ...rest }) => (
   <div className='container' {...rest}>
     {children}
     <style jsx>{`
